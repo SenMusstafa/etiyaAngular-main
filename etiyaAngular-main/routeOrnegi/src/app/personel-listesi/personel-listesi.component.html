@@ -1,0 +1,11 @@
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Adı</th>
+  </tr>
+  <tr *ngFor="let p of personeller" (click)="personelSecildi(p)"
+      class="satir" [class.oncekiPersonel]="p.id.toString() == seciliPersonelId">
+    <td>{{ p.id }}</td>
+    <td>{{ p.adi }}</td>
+  </tr>
+</table>

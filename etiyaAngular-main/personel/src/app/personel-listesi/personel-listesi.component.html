@@ -1,0 +1,16 @@
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Sıra</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let personel of personeller;let i=index">
+      <td>{{i+1}}</td>
+      <td>{{personel.email}}</td>
+    </tr>
+  </tbody>
+</table>
+<button class="btn btn-primary" routerLink="/anaMenu">Geri</button>
+

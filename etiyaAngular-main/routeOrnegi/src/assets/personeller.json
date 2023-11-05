@@ -1,0 +1,6 @@
+[
+  { "id": 1, "adi": "Aslı", "email":"asli@hotmail.com", "iseGirisYili": 2023},
+  { "id": 2, "adi": "Kerim", "email":"kerim@gmail.com", "iseGirisYili": 2021},
+  { "id": 3, "adi": "Piraye", "email":"piraye@hotmail.com", "iseGirisYili": 2019},
+  { "id": 4, "adi": "Murteza", "email":"murteza@gmail.com", "iseGirisYili": 2022}
+]

@@ -1,0 +1,16 @@
+<table border="1">
+  <tr>
+    <th>Sicil</th>
+    <th>Adı</th>
+    <th>Soyası</th>
+    <th>Email</th>
+    <th>Yaş</th>
+  </tr>
+  <tr *ngFor="let p of personeller">
+    <td>{{p.id}}</td>
+    <td>{{p.adi}}</td>
+    <td>{{p.soyadi}}</td>
+    <td>{{p.email}}</td>
+    <td>{{p.yas}}</td>
+  </tr>
+</table>

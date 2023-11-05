@@ -1,0 +1,4 @@
+Sayı: <input type="number" [(ngModel)]="sayi" />
+<button (click)="hesapla()">Hesapla</button> <br/>
+<span *ngFor="let i of sayilar;last as sonSayi">{{i}}<span *ngIf="!sonSayi">,</span></span>
+

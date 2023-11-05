@@ -1,0 +1,11 @@
+<form [formGroup]="kisiForm">
+  {{kisiForm.value | json}}
+  <div class="mb-3">
+    <label for="adi" class="form-label">Adı</label>
+    <input formControlName="adi" type="text" class="form-control" id="adi">
+  </div>
+  <button type="button" class="btn btn-secondary btn-sm m-2" (click)="ePostaEkle()">EPosta Ekle</button>
+  <div formArrayName="epostalar" class="mb-3" *ngFor="let eposta of getEPostalar().controls; let i = index">
+    <input type="email" class="form-control my-1" [formControlName]="i" >
+  </div>
+</form>

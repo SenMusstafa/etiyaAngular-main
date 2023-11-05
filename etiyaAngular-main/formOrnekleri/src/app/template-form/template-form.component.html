@@ -1,0 +1,26 @@
+<form #girisForm="ngForm" (ngSubmit)="submit()">
+  {{ girisForm.value |json }}<br/>
+  {{ giris |json }}
+  <div class="mb-3">
+    <label for="txtAdi" class="form-label">Adı</label>
+    <input type="text" #adi="ngModel"
+       [class.is-invalid]="adi.invalid && adi.touched"
+       required
+       class="form-control"
+       id="txtAdi" [(ngModel)]="giris.adi" name="adi">
+     <small *ngIf="adi.invalid && adi.touched" class="text-danger">Adı alanı boş geçilemez</small>
+  </div>
+  <div class="mb-3">
+    <label for="txtEmail" class="form-label">Email</label>
+    <input type="email" #email="ngModel" class="form-control"
+      [class.is-invalid]="email.invalid && email.touched"
+      required
+      pattern="^.{6}.*$"
+      id="textEmail" [(ngModel)]="giris.email" name="email">
+    <div *ngIf="email.invalid && email.touched">
+      <small *ngIf="email.errors?.['required'] != null" class="text-danger">Email alanı boş geçilemez</small>
+      <small *ngIf="email.errors?.['pattern'] != null" class="text-danger">Email alanı en az 6 karakter olmalıdır</small>
+    </div>
+  </div>
+  <button [disabled]="girisForm.form.invalid" type="submit" class="btn btn-primary">Giriş</button>
+</form>

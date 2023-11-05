@@ -1,0 +1,17 @@
+<table *ngIf="personeller.length > 0; else personellerSorgulaniyor" border="1">
+  <tr>
+    <th>Adı</th>
+    <th>Soyası</th>
+    <th>Email</th>
+  </tr>
+  <tr *ngFor="let p of personeller">
+    <td>{{p.adi}}</td>
+    <td>{{p.soyadi}}</td>
+    <td>{{p.email}}</td>
+  </tr>
+</table>
+<ng-template #personellerSorgulaniyor>
+ Personeller sorgulanıyor....
+</ng-template>
+<br/>
+<app-personel-listesi-detay></app-personel-listesi-detay>

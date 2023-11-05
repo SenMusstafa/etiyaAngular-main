@@ -1,0 +1,29 @@
+<div *ngIf="personel != undefined; else personelBulunamadi">
+  <div class="personelSecSatiri">
+    <span class="personelSec" (click)="oncekiPersonel()">Önceki Personel</span>
+    <span class="personelSec" (click)="sonrakiPersonel()">Sonraki Personel</span>
+  </div>
+  <table>
+    <tr>
+      <td>Id</td>
+      <td>{{personel.id}}</td>
+    </tr>
+    <tr>
+      <td>Adı</td>
+      <td>{{personel.adi}}</td>
+    </tr>
+    <tr>
+      <td>Email</td>
+      <td>{{personel.email}}</td>
+    </tr>
+    <tr>
+      <td>İşe Giriş Yılı</td>
+      <td>{{personel.iseGirisYili}}</td>
+    </tr>
+  </table>
+</div>
+<ng-template #personelBulunamadi>
+  Personel Bulunamadı...
+</ng-template>
+<br/>
+<div (click)="geri()" class="link">Geri</div>

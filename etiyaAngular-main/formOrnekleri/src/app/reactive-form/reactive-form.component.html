@@ -1,0 +1,38 @@
+<form [formGroup]="kayitFormu">
+  {{ kayitFormu.value | json }}<br/>
+  <div class="mb-3">
+    <label for="txtEmail" class="form-label">Eposta</label>
+    <input formControlName="eposta" type="email" class="form-control" id="txtEmail"
+           [class.is-invalid]="epostaHatali()" >
+    <small *ngIf="epostaHatali()"
+           class="text-danger">Eposta alanı boş geçilemez</small>
+  </div>
+  <div class="mb-3">
+    <label for="txtPassword" class="form-label">Şifre</label>
+    <input [class.is-invalid]="sifreHatali()" formControlName="sifre" type="password" class="form-control" id="txtPassword">
+    <div *ngIf="sifreHatali()">
+      <small *ngIf="kayitFormu.get('sifre')?.errors?.['required']" class="text-danger">Şifre alanı boş geçilemez</small>
+      <small *ngIf="kayitFormu.get('sifre')?.errors?.['minlength']" class="text-danger">Şifre alanı en az 3 karakter olmalıdır</small>
+      <small *ngIf="kayitFormu.get('sifre')?.errors?.['hata']"
+             class="text-danger">Şifre uygun değil: {{ kayitFormu.get('sifre')?.errors?.['hata'].value }}</small>
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="txtPassword2" class="form-label">Şifre (tekrar)</label>
+    <input formControlName="sifre2" type="password" class="form-control" id="txtPassword2">
+    <small *ngIf="kayitFormu.errors?.['emailesitdegil']" class="text-danger">Eposta alanları eşit değil</small>
+  </div>
+  <div formGroupName="adres">
+    <div class="mb-3">
+      <label for="txtIl" class="form-label">İl</label>
+      <input formControlName="il" type="email" class="form-control" id="txtIl">
+    </div>
+    <div class="mb-3">
+      <label for="txtIlce" class="form-label">İlçe</label>
+      <input formControlName="ilce" type="email" class="form-control" id="txtIlce">
+    </div>
+  </div>
+  <button (click)="bilgileriGetir()" type="button" class="btn btn-secondary me-2">Bilgileri Getir</button>
+  <button (click)="sifreleriSifirla()" type="button" class="btn btn-secondary me-2">Şifreleri Sil</button>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
